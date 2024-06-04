@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Etapa BUILD no disponible"
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "Etapa Test no disponible"
+            }
+        }
+
+        stage('Deployd') {
+            steps {
+                sh 'docker-compose down -v'
+                sh 'docker-compose up -d --build' 
+            }
+        }
+    }
+}
